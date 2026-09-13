@@ -20,13 +20,14 @@ An interactive Streamlit dashboard that analyzes Crystal Palace FC match perform
 - OpenPyXL
 
 ## Dashboard Preview
-<img width="1875" height="863" alt="image" src="https://github.com/user-attachments/assets/871a6c7d-d2a9-4d83-9b52-9358d345dddd" />
+<img width="1897" height="852" alt="image" src="https://github.com/user-attachments/assets/dd0f5bfd-91a1-46db-9748-2a2192599a60" />
 
-<img width="1878" height="867" alt="image" src="https://github.com/user-attachments/assets/fb5ac638-1ec9-47b6-a9c5-07dcfd3b1839" />
+<img width="1890" height="860" alt="image" src="https://github.com/user-attachments/assets/240225aa-fe81-4a0c-a836-e44ead2ebb4b" />
 
-<img width="1897" height="852" alt="image" src="https://github.com/user-attachments/assets/776f8445-34c2-4544-99c0-97418862fcd6" />
+<img width="1867" height="858" alt="image" src="https://github.com/user-attachments/assets/fea85877-a745-41f7-abb6-2002db000f03" />
 
-<img width="1868" height="871" alt="image" src="https://github.com/user-attachments/assets/d6163909-c33e-4d84-8877-f9a2dd4fd7c7" />
+<img width="1877" height="852" alt="image" src="https://github.com/user-attachments/assets/cac7eb3e-923f-440c-a5be-19b0efba799b" />
+
 
 ## How to Run
 
