@@ -50,7 +50,7 @@ button[data-baseweb="tab"] {
 FILE = os.path.join(
     os.path.expanduser("~"),
     "Downloads",
-    "Crystal palace (7).xlsx"
+    "Crystal palace (9).xlsx"
 )
 
 # ==================================================
@@ -89,7 +89,7 @@ try:
 
     advanced_df = pd.read_excel(
         FILE,
-        sheet_name="Advanced stats"
+        sheet_name="Efficiency stats"
     )
 
     defending_df = pd.read_excel(
@@ -113,7 +113,7 @@ except Exception as e:
 dashboard_tab, match_tab, advanced_tab, opponent_tab = st.tabs([
     "Dashboard",
     "Match Stats",
-    "Advanced Stats",
+    "Efficiency Stats",
     "Opponent Analysis"
 ])
 
@@ -260,7 +260,7 @@ with match_tab:
 
 with advanced_tab:
 
-    st.header("Advanced Statistics")
+    st.header("Efficiency Stats")
 
     advanced_display = advanced_df.copy()
 
@@ -332,7 +332,7 @@ with advanced_tab:
         )
 
         radar.update_layout(
-            title="Advanced Statistical Profile",
+            title="Efficient Statistical Profile",
             polar=dict(
                 radialaxis=dict(
                     visible=True
@@ -415,7 +415,7 @@ with opponent_tab:
 
     if not advanced_match.empty:
 
-        st.write("### Advanced Stats")
+        st.write("### Efficiency Stats")
 
         advanced_match_display = advanced_match.copy()
 
