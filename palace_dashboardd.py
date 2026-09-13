@@ -437,27 +437,116 @@ with opponent_tab:
             use_container_width=True
         )
 
-        radar_cols = advanced_match.select_dtypes(
-            include="number"
-        ).columns.tolist()
+        # ==========================================
+        # MATCH COMPARISON RADAR
+        # Crystal Palace vs Opponent
+        # ==========================================
+        radar_metrics = [
+            ("shots ", "shots/A", attacking_match),
+            ("shots on goal", "shots on goal/A", attacking_match),
+            ("shots in box", "shots in box/A", attacking_match),
+            ("XG", "XG/A", attacking_match),
+            ("goals ", "Goals/A", attacking_match)
+        ]
 
-        if len(radar_cols) >= 5:
+
+
+
+        labels = []
+        palace_values = []
+        opponent_values = []
+
+        for palace_stat, opponent_stat, source_df in radar_metrics:
+
+            try:
+
+                if (
+                    palace_stat in source_df.columns
+                    and opponent_stat in source_df.columns
+                ):
+
+                    labels.append(palace_stat)
+
+                    palace_values.append(
+                        float(
+                            source_df[
+                                palace_stat
+                            ].iloc[0]
+                        )
+                    )
+
+                    opponent_values.append(
+                        float(
+                            source_df[
+                                opponent_stat
+                            ].iloc[0]
+                        )
+                    )
+
+            except:
+                continue
+
+        if len(labels) > 0:
 
             fig = go.Figure()
 
             fig.add_trace(
                 go.Scatterpolar(
-                    r=[
-                        advanced_match[col].iloc[0] * 100
-                        for col in radar_cols[:5]
-                    ],
-                    theta=radar_cols[:5],
-                    fill="toself"
+                    r=palace_values,
+                    theta=labels,
+                    fill="toself",
+                    name="Crystal Palace",
+                    line=dict(
+                        color="#E41B23",
+                        width=4
+                    ),
+                    fillcolor="rgba(228,27,35,0.30)"
+                )
+            )
+
+            fig.add_trace(
+                go.Scatterpolar(
+                    r=opponent_values,
+                    theta=labels,
+                    fill="toself",
+                    name=selected_team,
+                    line=dict(
+                        color="#1E90FF",
+                        width=4
+                    ),
+                    fillcolor="rgba(30,144,255,0.30)"
                 )
             )
 
             fig.update_layout(
-                title=f"{selected_team} Advanced Profile"
+                title=f"Crystal Palace vs {selected_team}",
+                template="plotly_dark",
+                paper_bgcolor="#07142B",
+                plot_bgcolor="#07142B",
+                font_color="white",
+                height=750,
+                showlegend=True,
+                legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.05,
+                    xanchor="center",
+                    x=0.5
+                ),
+                polar=dict(
+                    bgcolor="#07142B",
+                    radialaxis=dict(
+                        visible=True,
+                        gridcolor="gray",
+                        linecolor="gray"
+                    ),
+                    angularaxis=dict(
+                        tickfont=dict(
+                            color="white",
+                            size=12
+                        )
+                    )
+                )
             )
 
             st.plotly_chart(
