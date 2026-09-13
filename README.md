@@ -26,7 +26,8 @@ An interactive Streamlit dashboard that analyzes Crystal Palace FC match perform
 
 <img width="1867" height="858" alt="image" src="https://github.com/user-attachments/assets/fea85877-a745-41f7-abb6-2002db000f03" />
 
-<img width="1877" height="852" alt="image" src="https://github.com/user-attachments/assets/cac7eb3e-923f-440c-a5be-19b0efba799b" />
+<img width="1880" height="771" alt="image" src="https://github.com/user-attachments/assets/b87bfffe-8f5f-4cd6-a13b-b3f49236b992" />
+
 
 
 ## How to Run
