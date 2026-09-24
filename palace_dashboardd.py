@@ -47,11 +47,7 @@ button[data-baseweb="tab"] {
 # EXCEL FILE LOCATION
 # ==================================================
 
-FILE = os.path.join(
-    os.path.expanduser("~"),
-    "Downloads",
-    "Crystal palace (10) (6).xlsx"
-)
+FILE = "Crystal palace (10) (6).xlsx"
 
 # ==================================================
 # HEADER
